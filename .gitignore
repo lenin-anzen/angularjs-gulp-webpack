@@ -1,0 +1,10 @@
+# Operating System
+.DS_Store
+thumbs.db
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
