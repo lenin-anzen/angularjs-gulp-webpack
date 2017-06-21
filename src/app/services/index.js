@@ -1,7 +1,5 @@
 import angular from 'angular';
 
-var moduleName = 'app.services';
+let servicesModule = angular.module('app.services', []);
 
-angular.module(moduleName, []);
-
-export default moduleName;
+export default servicesModule;

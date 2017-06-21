@@ -1,4 +1,3 @@
-
 class HomeController {
     constructor($scope) {
         console.log('constructor', $scope);

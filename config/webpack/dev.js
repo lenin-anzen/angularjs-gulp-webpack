@@ -4,6 +4,7 @@ const os                = require('os'),
     path                = require('path'),
     webpack             = require('webpack'),
     HtmlWebpackPlugin   = require('html-webpack-plugin'),
+    ExtractTextPlugin   = require('extract-text-webpack-plugin'),
     BrowserSyncPlugin   = require('browser-sync-webpack-plugin');
 
 /**
@@ -21,6 +22,9 @@ const paths = {
 module.exports = function (env) {
 	return {
         devtool: 'eval-source-map',
+        resolve: {
+            extensions: ['*', '.js', '.json']
+        },
         context: paths.source,
         entry: [ 
 			'./app/index.js',
@@ -39,8 +43,20 @@ module.exports = function (env) {
                 {
                     test: /\.html$/,
                     loader: 'html-loader'
+                    //loader: 'html-loader!ngtemplate-loader?relativeTo=' + paths.source
                     // ngtemplate-loader!html-loader!raw-loader
-                }
+                },
+                // SASS modularization using style and css loader
+				{
+					test: /\.(scss|css)$/,
+					use: ExtractTextPlugin.extract({
+						fallback: 'style-loader',
+						use: [
+							{ loader: 'css-loader', query: { modules: false, sourceMaps: true } },
+							{ loader: 'sass-loader', query: { sourceMaps: true } }
+						]
+					})
+				},
             ]
         },
         plugins: [
@@ -49,10 +65,7 @@ module.exports = function (env) {
                 template: './app/index.html',
                 filename: 'index.html'
             }),
-            /*new HtmlWebpackPlugin({
-                template: './app/controllers/home/view.html',
-                filename: './app/controllers/home/view.html'
-            }),*/
+			new ExtractTextPlugin('[name].css?v=[contenthash]'),
             new BrowserSyncPlugin(
                 // BrowserSync options
                 {

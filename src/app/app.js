@@ -8,13 +8,26 @@ import ngMessages from 'angular-messages';
 import ngSanitize from 'angular-sanitize';
 import 'ngstorage';
 
+// Style dependencies
+import 'angular-material/angular-material.css';
+
 // Custom
 import controllersModule from './controllers';
-import services from './services';
+import servicesModule from './services';
 import config from './config';
+import run from './run';
 
 const app = angular
-    .module('app', [uiRouter, ngAnimate, ngMessages, ngSanitize, 'ngStorage', controllersModule.name, services])
-    .config(config);
+    .module('app', [
+        uiRouter, 
+        ngAnimate, 
+        ngMessages, 
+        ngSanitize, 
+        'ngStorage', 
+        controllersModule.name, 
+        servicesModule.name
+    ])
+    .config(config)
+    .run(run);
 
 export default app;

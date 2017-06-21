@@ -4,5 +4,5 @@ import angular from 'angular';
 // Application
 import app from './app';
 
-// Initialize application
+// Initialize/Bootstrap application
 angular.bootstrap(document.documentElement, ['app']);

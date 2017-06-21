@@ -1,6 +1,4 @@
-'use strict';
-
-import template from '../controllers/home/view.html';
+import homeTemplate from '../controllers/home/view.html';
 
 let configuration = function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
@@ -9,7 +7,7 @@ let configuration = function ($stateProvider, $urlRouterProvider, $locationProvi
         name: 'home',
         url: '/',
         //template: '<p>Home {{a}}</p>',
-        template: require('../controllers/home/view.html'),
+        template: homeTemplate,
         controller: 'HomeController',
         controllerAs: 'vm'
     }
@@ -18,21 +16,11 @@ let configuration = function ($stateProvider, $urlRouterProvider, $locationProvi
     var fooState = {
         name: 'foo',
         url: '/foo',
-        template: template,
+        template: homeTemplate,
         controller: 'HomeController',
         controllerAs: 'vm'
     }
     $stateProvider.state(fooState);
-
-    var aboutState = {
-        name: 'about',
-        url: '/about',
-        template: template,
-        controller: 'HomeController',
-        controllerAs: 'vm'
-    }
-    console.log('aboutState:', aboutState);
-    $stateProvider.state(aboutState);
 };
 
 configuration.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
