@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/lenin-anzen/angularjs-gulp-webpack.svg?branch=master)](https://travis-ci.org/lenin-anzen/angularjs-gulp-webpack)
 [![Coverage Status](https://coveralls.io/repos/github/lenin-anzen/angularjs-gulp-webpack/badge.svg?branch=master)](https://coveralls.io/github/lenin-anzen/angularjs-gulp-webpack?branch=master)
 [![codecov.io](https://codecov.io/github/lenin-anzen/angularjs-gulp-webpack/coverage.svg?branch=master)](https://codecov.io/github/lenin-anzen/angularjs-gulp-webpack?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/lenin-anzen/angularjs-gulp-webpack/badge.svg)](https://snyk.io/test/github/lenin-anzen/angularjs-gulp-webpack)
 
 AngularJS 1, Gulp 3, Webpack 2, Karma, ESlint, etc.
 
