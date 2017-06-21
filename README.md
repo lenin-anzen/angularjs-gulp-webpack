@@ -1,7 +1,7 @@
 # AngularJS, Gulp, Webpack
 
 [![Build Status](https://travis-ci.org/lenin-anzen/angularjs-gulp-webpack.svg?branch=master)](https://travis-ci.org/lenin-anzen/angularjs-gulp-webpack)
-[![Coverage Status](https://coveralls.io/repos/lenin-anzen/angularjs-gulp-webpack/badge.svg?branch=master&service=github)](https://coveralls.io/github/lenin-anzen/angularjs-gulp-webpack?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/lenin-anzen/angularjs-gulp-webpack/badge.svg?branch=master)](https://coveralls.io/github/lenin-anzen/angularjs-gulp-webpack?branch=master)
 [![codecov.io](https://codecov.io/github/lenin-anzen/angularjs-gulp-webpack/coverage.svg?branch=master)](https://codecov.io/github/lenin-anzen/angularjs-gulp-webpack?branch=master)
 
 AngularJS 1, Gulp 3, Webpack 2, Karma, ESlint, etc.
@@ -35,6 +35,9 @@ Dependencias de Gulp:
  - [gulp-open](https://github.com/stevelacy/gulp-open)
  - [webpack2-stream-watch](https://www.npmjs.com/package/webpack2-stream-watch)
 
+ Pruebas Unitarias:
+  - [Jest](https://facebook.github.io/jest/)
+
 ### Instalación
 
 Instalar dependencias globalmente:
@@ -67,9 +70,17 @@ Dependencias de Angular:
 npm i --save angular angular-animate angular-messages angular-sanitize angular-aria @uirouter/angularjs angular-material ngstorage
 ```
 
+Pruebas unitarias:
+```shell
+npm i --save-dev jest
+```
+
 Extras:
 ```shell
-npm i --save lodash os
+npm i --save-dev os
+```
+```shell
+npm i --save lodash
 ```
 
 Referencias:
