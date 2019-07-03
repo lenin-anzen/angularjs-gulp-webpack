@@ -6,7 +6,9 @@
   "scripts": {
     "start": "gulp",
     "dev": "webpack-dev-server --env=dev --progress --profile --colors --hot",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -54,10 +56,12 @@
     "angular-sanitize": "^1.6.4",
     "lodash": "^4.17.4",
     "ngstorage": "^0.3.11",
-    "os": "^0.1.1"
+    "os": "^0.1.1",
+    "snyk": "^1.189.0"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
-  }
+  },
+  "snyk": true
 }
